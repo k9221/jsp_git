@@ -15,7 +15,6 @@
 		void message(){
 			System.out.println("안녕");
 		}
-		
 	%>
 
 

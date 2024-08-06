@@ -13,8 +13,9 @@
 		for(String h : hobby){
 			out.println(h + "<br>");
 		}
-			
+												
 		out.println(name + "님 환영합니다.!");
 	%>
 </body>
 </html>
+

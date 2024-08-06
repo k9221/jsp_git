@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="login_result.jsp" method="get">
+	<form action="login_result.jsp" method="get">	
 		<div>
 			아이디 : <input type="text" name="userId">
 		</div>
@@ -16,7 +16,8 @@
 		</div>
 		<button type="submit">로그인</button>
 	</form>
-
+	
+	
 
 </body>
 </html>
