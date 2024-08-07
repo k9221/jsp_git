@@ -26,16 +26,18 @@
 
 </head>
 <body>
+	<div><button onclick="location.href='login.jsp'">로그아웃</button></div>
 	<%@include file="db.jsp"%>	
 	<%
-	ResultSet rs = null;
-	Statement stmt = null;
-	
-	try{
-		stmt = conn.createStatement();
-		String querytext = "SELECT * FROM TBL_BOARD";
-		rs = stmt.executeQuery(querytext);
-	%>
+		ResultSet rs = null;
+			Statement stmt = null;
+			
+			try{
+				stmt = conn.createStatement();
+				String querytext = 
+				"SELECT * FROM TBL_BOARD B " + "INNER JOIN TBL_USER U ON B.userId = U.userId";
+				rs = stmt.executeQuery(querytext);
+		%>
 		<table>
 		<tr>
 			<th> 번호 </th>
@@ -54,7 +56,7 @@
 					<%= rs.getString("title") %>
 				</a>
 			</td>
-			<td> <%= rs.getString("userId") %></td>
+			<td> <%= rs.getString("name") %></td>
 			<td> <%= rs.getString("cnt") %></td>
 			<td> <%= rs.getString("cdatetime") %></td>
 		</tr>

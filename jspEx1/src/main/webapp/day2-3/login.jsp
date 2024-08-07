@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%
+		/* session.removeAttribute("userId"); */
+		session.invalidate(); /* 한번에 묶어서 삭제가 가능함  */
+	/* 	out.println(session.getAttribute("userId")); */
+	%>
 	<form action="login_result.jsp">
 		<div>
 			<label>아이디 : <input type="text" name="userId"></label>
@@ -16,6 +21,7 @@
 		</div>
 		<input type="submit" value="로그인">
 	</form>
-		
+	
+			
 </body>
 </html>
