@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-	div {
-		margin-top : 5px;
-	}
+div {
+	margin-top: 5px;
+}
 </style>
 
 </head>
@@ -21,7 +21,8 @@
 			<label>내용 : <textarea cols="50" rows="10" name="contents"></textarea></label>
 		</div>
 		<div>
-			<input type="button" value="저장" onclick="fnCheck()"> <!--버튼으로 줬을 경우에 디폴트 값이 submit 이기에 input으로 설정해준다.  -->
+			<input type="button" value="저장" onclick="fnCheck()">
+			<!--버튼으로 줬을 경우에 디폴트 값이 submit 이기에 input으로 설정해준다.  -->
 		</div>
 	</form>
 </body>
@@ -33,14 +34,14 @@
 			alert("제목을 입력해주세요.");
 			form.title.focus();
 			return;
-		} else if(form.contents.value == ""){
+		} else if (form.contents.value == "") {
 			alert("내용을 입력해주세요.");
 			form.contents.focus();
 			return;
 		} else {
-			alert("저장되었습니다.");	
+			alert("저장되었습니다.");
 			form.submit();
-		}	
-	
+		}
+
 	}
 </script>

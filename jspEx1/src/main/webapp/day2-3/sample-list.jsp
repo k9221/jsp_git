@@ -22,7 +22,7 @@ table, th, tr, td {
 <body>
 	<%@include file="db.jsp"%>
 	<%
-	ResultSet rs = null;
+		ResultSet rs = null;
 		Statement stmt = null;
 
 		try {

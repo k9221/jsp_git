@@ -22,23 +22,25 @@ table, th, tr, td {
 <body>
 	<%@include file="db.jsp"%>
 	<%
-	ResultSet rs = null;
-	Statement stmt = null;
-	String boardNo = request.getParameter("boardNo");
-	try {
-		stmt = conn.createStatement();
-		String querytext = "DELETE FROM TBL_BOARD WHERE boardNo =" + boardNo;
-		stmt.executeUpdate(querytext);
-		
-		
-	} catch (SQLException ex) {
-		out.println("SQLException : " + ex.getMessage());
-	}
+		ResultSet rs = null;
+		Statement stmt = null;
+		String userId = request.getParameter("userId");
+
+		try {
+			stmt = conn.createStatement();
+			String querytext = 
+						"UPDATE TBL_USER SET cnt = 0 WHERE userId = '" + userId + "'";
+			stmt.executeUpdate(querytext);
+
+		} catch (SQLException ex) {
+			out.println("SQLException : " + ex.getMessage());
+		}
 	%>
 
 </body>
 </html>
 <script>
-	alert("삭제되었다")
-	location.href="board-list2.jsp";
+	alert("최기화 되었습니다.")
+	window.close();
+	window.opener.fnReload();
 </script>
