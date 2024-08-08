@@ -82,7 +82,7 @@
 </body>
 </html>
 <script>
-
+	
 	function fnUpdate(){
 		var form = document.board;
 		form.action = "board-update.jsp";
@@ -97,6 +97,8 @@
 	}
 	
 	function fnReload(){
+		var form = document.board;
+		
 		location.reload();
 	}
 </script>

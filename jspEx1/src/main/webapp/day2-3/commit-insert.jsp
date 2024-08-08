@@ -32,8 +32,7 @@
 		try{
 			stmt = conn.createStatement();
 			String querytext = 
-					"INSERT INTO TBL_COMMENT VALUES ("
-					+ "NULL, " + boardNo + ",'" + sessionId + "', '" + comment + "', "
+					"INSERT INTO TBL_COMMENT VALUES ("+ "NULL, " + boardNo + ",'" + sessionId + "', '" + comment + "', "
 					+ "0, now(), now()"
 					+ ")";
 			stmt.executeUpdate(querytext);

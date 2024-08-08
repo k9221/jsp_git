@@ -39,7 +39,9 @@ table, th, tr, td {
 			stmt = conn.createStatement();
 			String querytext = "SELECT * FROM TBL_USER";
 			rs = stmt.executeQuery(querytext);
-
+			
+			
+			
 			while (rs.next()) {
 				String status = rs.getString("status").equals("A") ? "관리자" : "일반회원";
 		%>
