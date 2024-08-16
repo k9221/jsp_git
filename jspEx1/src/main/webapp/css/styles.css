@@ -1,0 +1,557 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo-link {
+    position: absolute;
+    top: 9.3%;
+    left: 7.3%;
+    transform: translate(-50%, -50%);
+    display: block;
+    z-index: 2;
+}
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.overlay-image {
+    position: absolute;
+    top: 9.3%;
+    left: 7.3%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+    z-index: 2;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.623em;
+    font-weight: bold;
+    z-index: 3;
+}
+
+.main_nav {
+    position: absolute;
+    top: 11%;
+    left: 12%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    z-index: 5;
+}
+
+.main_nav li a {
+    color: white;
+    padding-left: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: font-size 0.3s ease;
+}
+
+.main_nav li a:hover {
+    font-size: 1.4em;
+}
+
+.p1 {
+    font-size: 2.4em;
+}
+
+h5 {
+    display: block;
+    font-size: 0.58em;
+    margin-block-start: -2em;
+    margin-block-end: 1.67em;
+    font-weight: bold;
+}
+
+.main-pointLine1,
+.main-pointLine2 {
+    position: absolute;
+    top: 15%;
+    left: 3.5%;
+    right: 3.5%;
+    width: 92vw;
+    height: 0.1vw;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 10;
+}
+
+.main-pointLine3,
+.main-pointLine4 {
+    position: absolute;
+    top: 15%;
+    width: 0.03vw;
+    height: 20vw;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 1;
+}
+
+.main-pointLine3 {
+    left: 34%;
+}
+
+.main-pointLine4 {
+    left: 66%;
+}
+
+.hover-image {
+    position: absolute;
+    top: 1%;
+    right: 6%;
+    width: 100px;
+    height: 100px;
+    z-index: 4;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.hover-image img {
+    width: 180px;
+    height: 170px;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+.hover-box {
+    position: absolute;
+    top: -30%;
+    right: -6vw;
+    width: 16vw;
+    height: 110vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hover-box .hover-list {
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 20%;
+    left: 0;
+}
+
+.hover-list li {
+    padding: 10px;
+}
+
+.hover-list li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 18px 10px;
+    transition: background-color 0.3s;
+}
+
+.hover-list li a:hover {
+    font-size: 1.2em;
+    transition: font-size 0.5s;
+}
+
+.hover-image:hover .hover-box {
+    opacity: 1;
+}
+
+.hover-image:hover img {
+    opacity: 0;
+}
+
+.section-background {
+    background-color: rgba(238, 237, 236, 0.2);
+    width: 100vw;
+    min-height: 289vh; /* 스크롤 길이 늘리기 */
+    padding-top: 100px;
+}
+
+h1 {
+    display: block;
+    font-size: 2.3em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.image-gellery {
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.horizontal-list {
+    display: flex;
+    list-style-type: none;
+    gap: 100px;
+    overflow-x: auto;
+}
+
+.horizontal-list li {
+    flex: 0 0 auto;
+}
+
+.horizontal-list img {
+    width: 21vw;
+    height: 53vh;
+    flex-shrink: 0;
+}
+
+.horizontal-list img:hover {
+    transform: scale(1.06);
+    transition: transform 0.4s ease;
+}
+
+.horizontal-list p {
+    font-size: 0.8em;
+    color: grey;
+}
+
+.horizontal-list a {
+    text-decoration: none;
+    color: black;
+}
+
+.section button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section2 {
+    width: 100vw;
+    height: 47vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.section2-backgroundImag {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+}
+
+.section2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+
+.section2-pointLine3,
+.section2-pointLine4 {
+    position: absolute;
+    top: 0%;
+    width: 0.03vw;
+    height: 60vw;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 2;
+}
+.section2-pointLine3 {
+    left: 34%;
+}
+
+.section2-pointLine4 {
+    left: 66%;
+}
+.section2-pointLine5,
+.section2-pointLine6,
+.section2-pointLine7 {
+    position: absolute;
+    top: 48%;
+    width: 0.03vw;
+    height: 7vw;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 2;
+}
+.section2-pointLine5 {
+    left: 21%;
+}
+.section2-pointLine6 {
+    left: 50%;
+}
+.section2-pointLine7 {
+    left: 80%;
+}
+
+.section2-text {
+    position: absolute;
+    top: 16%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+}
+
+.section2-text h2,
+.section2-text p {
+    font-size: 2.8em;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+
+.section2-text-chap1 li,
+.section2-text-chap2 li,
+.section2-text-chap3 li {
+    position: absolute;
+    top: 10vw;
+    width: 100%;
+    list-style: none;
+    font-size: 1.6em;
+    color: white;
+}
+
+.section2-text-chap1 li {
+    left: -500px;
+}
+
+.section2-text-chap2 li {
+    left: 0px;
+}
+
+.section2-text-chap3 li {
+    left: 30vw;
+}
+.section3-background {
+    background-color: rgba(238, 237, 236, 0.2);
+    width: 100vw;
+    height:500px;
+    padding-top: 300px;
+}
+
+.section3 {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between; /* 사진과 글씨를 양쪽으로 배치 */
+    align-items: center;
+    position: relative;
+    margin-top: 50px;
+    padding: 20px; /* 여백 추가 */
+}
+
+.section3-image1 {
+    position: relative;
+    left: -3%;
+    width: 50vw; /* 너비 조정 */
+    height: 80vh; /* 높이 조정 */
+}
+
+.section3-image1-1 {
+    position: relative;
+    width: 17vw; /* 너비 조정 */
+    height: 50vh; /* 높이 조정 */
+}
+
+.section3-text {
+    position: relative;
+    font-size: 1.7em;
+    font-weight: bold;
+    width: 25vw; /* 너비 조정 */
+    height: auto;
+    z-index: 10;
+    color: black; /* 글씨 색상 조정 */
+    margin: 0;
+    padding: 20px; /* 여백 추가 */
+    text-align: left; /* 왼쪽 정렬 */
+}
+
+.section3-pointLine1{
+    position: absolute;
+    top: 30%;
+    left: 65%;
+    width: 0.05vw;
+    height: 40vw;
+    background-color: rgb(0, 0, 0);
+    z-index: 11;
+}
+
+footer {
+    width: 120vw;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerImage {
+    width: 100vw;
+    height: 201px;
+    object-fit: cover;
+    object-position: center;
+}
+.footer-text{
+    margin-top: 10px; /* 이미지와 텍스트 사이의 여백 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    width: 100%; /* 텍스트 영역을 푸터의 너비에 맞춤 */
+    padding: 0 20px; /* 좌우 여백 (선택 사항) */
+    font-size: 1em; /* 텍스트 크기 (선택 사항) */
+    color: #333; /* 텍스트 색상 (선택 사항) */
+}
+
+@media (max-width: 1200px) {
+    .header .logo-link img {
+        width: 200px;
+    }
+
+    .section3 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section3-image1,
+    .section3-image1-1 {
+        width: 80vw;
+        height: auto;
+    }
+
+    .section3-text {
+        width: 90vw;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .main_nav li a {
+        font-size: 1em;
+    }
+
+    .text-overlay {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 900px) {
+    .header .logo-link img {
+        width: 180px;
+    }
+
+    .section3 {
+        padding: 10px;
+    }
+
+    .section3-image1,
+    .section3-image1-1 {
+        width: 90vw;
+    }
+
+    .section3-text {
+        width: 100vw;
+        font-size: 1.2em;
+    }
+
+    .main_nav li a {
+        font-size: 0.9em;
+    }
+
+    .text-overlay {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 600px) {
+    .header .logo-link img {
+        width: 150px;
+    }
+
+    .section3 {
+        padding: 5px;
+    }
+
+    .section3-image1,
+    .section3-image1-1 {
+        width: 100vw;
+    }
+
+    .section3-text {
+        width: 100vw;
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .main_nav li a {
+        font-size: 0.8em;
+    }
+
+    .text-overlay {
+        font-size: 1em;
+        padding: 5px;
+    }
+
+    .hover-box {
+        width: 20vw;
+        height: auto;
+        top: -10%;
+        right: -10vw;
+    }
+
+    .hover-list li {
+        padding: 5px;
+    }
+
+    .hover-list li a {
+        font-size: 0.8em;
+    }
+}
