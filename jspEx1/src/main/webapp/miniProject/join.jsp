@@ -1,79 +1,87 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="/jspEx1/css/sample.css">
-    <title>회원가입 페이지</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-        .login-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        label {
-            margin-bottom: 5px;
-        }
-        input {
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        button {
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
-    <div class="login-container">
-	    <form method="post" action="join-insert.jsp">
-	        <label for="userId">ID:</label>
-	        <input type="text" id="userId" name="userId" >
-	        <br>
-	        <label for="userPassword">Password:</label>
-	        <input type="password" id="userPassword" name="userPassword">
-	        <br>
-	        <label for="userName">Name:</label>
-	        <input type="text" id="userName" name="userName">
-	        <br>
-	        <label for="phoneNum">Phone:</label>
-	        <input type="text" id="phoneNum" name="phoneNum">
-	        <br>
-	        <label for="address">Address:</label>
-	        <input type="text" id="address" name="address">
-	        <br>
-	        <button type="button" onclick="fnSubmit()"></button>
-	    </form>
-    </div>
+	<%@ include file="db.jsp"%>
+	<%
+		String code = request.getParameter("code");
+	%>
+	
+	<!-- 아이디, 패스워드, 이름 저장 -->
+	<form action="" name="userForm" method="post">
+		<div>아이디 : <input type="text" name="userId">
+			<input type="button" onclick="idCheck();" value="중복체크">
+		</div>
+		<div>
+			비밀번호 : 
+			<input type="password" name="userPassword" id="userPassword" required class="textBox1" oninput="validatePassword()">
+			<div id="passwordErrorMessage" style="font-size: 12px;"></div>
+		</div>
+		<div>
+			비밀번호 확인: 
+			<input type="password" name="userPassword2" id="userPassword2" required class="textBox1" oninput="validatePasswordConfirmation()">
+			<div id="passwordConfirmationErrorMessage" style="font-size: 12px;"></div>
+		</div>
+		<div>
+			이름 : 
+			<input type="text" name="userName">
+		</div>
+		<div>
+			전화번호 : 
+			<input type="text" name="phoneNum">
+		</div>
+		<div>
+			주소 : 
+			<input type="text" name="address">
+		</div>
+		<div>
+			<input type="button" onclick="userJoin()" value="회원가입">
+		</div>
+
+	</form>
 </body>
 </html>
 <script>
-	function fnSubmit(){ /* submit을 사용하여 더 간략하고 쉽게 전송할 수 있다. */
-		var form = document.user;
-		form.action = "index.jsp"; /* form.action을 사용하여 원하는 주소로 이동할 수 있다. */
-		form.submit(); /* form.submit을 사용하여 호출한다. */
+	var check1 = false; // 아이디 중복체크 확인 여부
+	var check2 = false; // 중복 여부
+	function userJoin(){
+		if(!check2){
+			alert("아이디 중복체크 하셈");
+		} else { 
+			var form = document.userForm;
+			form.action = "join-result.jsp";
+			form.submit(); 
+		}
 	}
+	// 중복체크 확인 팝업
+	function idCheck(){
+		check1 = true;
+		var form = document.userForm;
+		if(form.userId.value =="" || form.userId.value.length < 0){
+			alert("아이디를 먼저 입력해주세요")
+			form.uId.focus();
+		}else{
+			window.open("idCheck.jsp?userId="+form.userId.value, "check","width=500, height=300");
+		}
+	}
+	// 중복체크 리턴 결과
+	function getReturn(val){
+		if(val == "Y"){
+			check2 = true;
+		} else {
+			check2 = false;
+		}
+	}
+
 </script>
+
+
+
+
+
+

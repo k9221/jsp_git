@@ -35,18 +35,17 @@
 	<table style="margin-top : 10px;">
 		<tr>
 			<th>아이디</th>
-			<th>비밀번호</th>
 			<th>이름</th>
 			<th>권한</th>
+			<th>비밀번호</th>
 		</tr>
 		 <c:forEach var="row" items="${result.rows}">
 		 	<tr>
 		 		<td>${row.userId}</td>
-		 		<td>${row.userPassword}</td>
-		 		<td>${row.userName}</td>
+		 		<td>${row.name}</td>
 		 		<td>
-		 			<c:if test="${row.status == 'ADMIN' }">관리자</c:if>
-		 			<c:if test="${row.status == 'USER' }">일반회원</c:if>
+		 			<c:if test="${row.status == 'A' }">관리자</c:if>
+		 			<c:if test="${row.status == 'C' }">일반회원</c:if>
 		 		</td>
 		 		<td>
 		 			<c:if test="${row.cnt >= 5}">
