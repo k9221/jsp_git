@@ -14,8 +14,10 @@
 <body>
 		
 <% request.setCharacterEncoding("UTF-8");%>
+
 	<%@include file="db.jsp"%>
 	<%
+		
 		ResultSet rs = null; // 쿼리에 결과를 담는 곳 (보관) select 한 결과를 ResultSet에 담는다. ResultSet은 쿼리의 결과를 저장하고 데이터에 접근하는 데 사용됩니다.
 		Statement stmt = null; // Statement는 쿼리를 실행하고 결과를 생성하는 데 사용됩니다.
 		

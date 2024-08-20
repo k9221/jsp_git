@@ -5,10 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/join.css">
 </head>
 <body>
 <%@ include file="db.jsp" %>
 <form name="check">
+	
 	<%
 		String userId = request.getParameter("userId");
 		
@@ -20,12 +22,12 @@
 			String sql = "SELECT * FROM tbl_user WHERE userId = '" + userId + "'";
 			rs = stmt.executeQuery(sql);
 			if(rs.next()){
-				out.println("사용중인 아이디 입니다. 다른 아이디를 입력해주세요.");
+				out.println("<div>사용중인 아이디 입니다. 다른 아이디를 입력해주세요.</div>");
 		%>
 				<input name="flg" value="N" hidden>
 		<%
 			} else {
-				out.println("사용 가능한 아이디 입니다.");
+				out.println("<p>사용 가능한 아이디 입니다.</p>");
 		%>
 				<input name="flg" value="Y" hidden>
 		<%
@@ -35,7 +37,7 @@
 			out.println(e.getMessage());
 		}
 	%>
-	<input type="button" onclick="back()" value="되돌아가기">
+	<input type="button" onclick="back()" value="되돌아가기" class="pop-button">
 </form>
 </body>
 </html>

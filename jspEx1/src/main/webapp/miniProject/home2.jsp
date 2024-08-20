@@ -38,7 +38,7 @@
                 <img src="<%= request.getContextPath() %>/img/logo2.png" alt="목록 이미지">
                 <div class="hover-box">
                     <ul class="hover-list">
-                        <li><a href="<%= request.getContextPath() %>/miniProject/login.jsp">로그인</a></li>
+                        <li><a href="<%= request.getContextPath() %>/miniProject/logout.jsp">로그아웃</a></li>
                         <li><a href="<%= request.getContextPath() %>/miniProject/join.jsp">회원가입</a></li>
                         <li><a href="<%= request.getContextPath() %>/miniProject/myPage.jsp">나의 정보</a></li>
                         <li><a href="<%= request.getContextPath() %>/login.html">장바구니</a></li>
@@ -52,12 +52,7 @@
         <div class="section-background">
             <!-- 로그인 상태에 따라 다른 내용을 표시합니다. -->
             <%
-            String userID = (String) session.getAttribute("userID");
-            if (userID == null) {
-            } else {
-                out.println("<p>" + userID + "님 환영합니다.</p>");
-                out.println("<a href='logout.jsp'>로그아웃</a>");
-            }
+
             %>
             
             <section class="section1">

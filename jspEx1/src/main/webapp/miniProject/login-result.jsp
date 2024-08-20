@@ -31,10 +31,9 @@ table, th, tr, td {
         if (rs.next()) {
             // 로그인 성공
             session.setAttribute("userId", rs.getString("userId"));
-            session.setAttribute("status", rs.getString("status"));
+            response.sendRedirect("home.jsp");
 
-            // 로그인 성공 후 리디렉션할 URL 설정
-            redirectUrl = "index.jsp";
+
         } else {
             // 로그인 실패 처리
             querytext = "SELECT * FROM TBL_USER WHERE userId = '" + id + "'";
