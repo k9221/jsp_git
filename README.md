@@ -1,5 +1,4 @@
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=BDBDC8&height=150&section=header&text=공감&fontSize=" />
+![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=300&section=header&text=공%20감&fontSize=90)
 
 # 🖥️ 프로젝트 소개
 + jsp를 활용하여 로그인과 회원가입 및 회원수정 기능을 탑재한 사이트를 만들었습니다.
