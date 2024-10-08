@@ -5,8 +5,16 @@
 + 자신만의 공간을 뜻깊게 채워주는 가구 사이트를 만들었습니다.
 + 디자인을 예쁘게 하여 사용자의 사용률이 높게끔 메인디자인을 구성하였다.
 
+
+
+
+
 # 🕓 개발기간
 + 2024.08.13~2024.08.20
+
+
+
+
 # 📋 사용언어
 ![Edge](https://img.shields.io/badge/jsp-0078D7?style=for-the-badge&logo=Microsoft-jsp&logoColor=white)
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
@@ -14,10 +22,18 @@
 ![Xamarin](https://img.shields.io/badge/css-3199DC?style=for-the-badge&logo=css&logoColor=white)
 ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
+
+
+
+
 # 🔍 주요기능
 + 회원가입
 + 로그인
 + 헤더메뉴 이동기능 구현
+
+
+
+
 
 # 💬 아쉬운점/느낀점
 + jsp의 구조와 설계가 익숙치 않아 많은 오류와 실수가 있었지만 그 과정에서 많은 꺠달음을 얻었다
